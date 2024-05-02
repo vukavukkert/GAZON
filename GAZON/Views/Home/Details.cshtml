@@ -1,0 +1,55 @@
+﻿@model GAZON.Database.Models.Item
+
+@{
+    ViewData["Title"] = "GAZON";
+}
+
+
+<div class="item-details flex-row space-around">
+    @if (Model.Picture != null)
+    {
+        <img src="@Model.Picture" class="shadow"/>
+    }
+    else
+    {
+        <img src="/src/images/UI/png/placeholder.png" alt="" class="shadow">
+
+    }
+    <div>
+        <div class="flex-row space-between">
+            <div>
+                <p class="name">@Model.Name</p>
+                <p class="vendor-name">@ViewBag.VendorName</p>
+                <p class="amount">Amount: @Model.Amount</p>
+            </div>
+            <div class="pay-card flex-column space-around center shadow">
+                <p class="price">@Model.Price</p>
+                <button class="button">
+                    <p>Soon</p>
+                </button>
+            </div>
+        </div>
+
+        <p class="description">
+            @Model.Description
+        </p>
+        @if (User.IsInRole("Administrator"))
+        {
+            @using (@Html.BeginForm("Delete", "Home", FormMethod.Post))
+            {
+                @Html.HiddenFor(Model => Model.Id)
+                <input type="submit" style="text-decoration: underline;color: darkred;" value="Delete">
+            }
+        }
+        @if (User.IsInRole("Administrator") || User.IsInRole("Staff"))
+        {
+            @using (@Html.BeginForm("Edit", "Home", FormMethod.Get))
+            {
+                @Html.HiddenFor(Model => Model.Id)
+                <input type="submit" style="text-decoration: underline;" value="Edit">
+
+            }
+        }
+    </div>
+
+</div>

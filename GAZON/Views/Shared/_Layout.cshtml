@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GAZON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+  @*   <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="icon" href="~/src/images/UI/svg/Star.svg">
+</head>
+<body>
+       <div class="header flex-row center space-around ">
+        <div id="Logo">
+            <a asp-action="Index" asp-controller="Home">
+                <img src="~/src/images/UI/svg/GAZON.svg" alt="Gazon logo">
+            </a>
+        </div>
+        <div class="search-bar ">
+           
+                @if (this.Url.PageLink()!.Contains("Points"))
+                {
+                    @using (Html.BeginForm("Search", "Points", FormMethod.Get, new { @class = "flex-row center space-between" }))
+                    {
+                        <input type="text" name="key" placeholder="Search on Gazon">
+                        <button type="submit">
+                        <img src="~/src/images/UI/svg/Search.svg" alt="Search">
+                        </button>
+                    }
+                }
+                else
+                {
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "flex-row center space-between" }))
+                    {
+                        <input type="text" name="key" placeholder="Search on Gazon">
+                        <div class="dropdown">
+                            <button type="submit">
+                            <img src="~/src/images/UI/svg/Filter.svg" alt="Filter">
+                            </button>
+
+                        <div class="dropdown-content shadow">
+                            <div class="dropdown-item">
+                                <input type="radio" checked="checked" id="item" value="item" name="filter">
+                                <label for="item">Item</label>
+                            </div>
+                            <div class="dropdown-item">
+                                <input type="radio" id="vendor" value="vendor" name="filter">
+                                <label for="vendor">Vendor</label>
+                            </div>
+                        </div>
+                        </div>
+                        <button type="submit">
+                        <img src="~/src/images/UI/svg/Search.svg" alt="Search">
+                        </button>
+                    }
+                }
+        </div>
+        <div class="nav">
+            <button>
+                <a asp-action="Index" asp-controller="Auth">
+                    <img src="~/src/images/UI/svg/Profile.svg" alt="Profile">
+                </a>
+            </button>
+            @if (User.IsInRole("Administrator"))
+                {
+                    <button>
+                        <a asp-action="Index" asp-controller="Points">
+                        <img src="~/src/images/UI/svg/Point.svg" alt="Point">
+                        </a>
+                    </button>
+                }
+                @if (User.IsInRole("Staff"))
+                {
+                    <button>
+                        <a asp-action="UserPoint" asp-controller="Points" asp-route-name="@User.Identity!.Name">
+                        <img src="~/src/images/UI/svg/Point.svg" alt="Point">
+                        </a>
+                    </button>
+                }
+
+            @if (User.IsInRole("Administrator"))
+                {
+                    <button>
+                        <a asp-action="Create" asp-controller="Home">
+                        <img src="~/src/images/UI/svg/Add.svg" alt="Point">
+                        </a>
+                    </button>
+                }
+        </div>
+    </div>
+    <div style="height: 4vw;">
+
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

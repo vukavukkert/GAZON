@@ -1,0 +1,44 @@
+﻿@model GAZON.Database.Models.Item
+
+@{
+    ViewData["Title"] = "GAZON";
+}
+
+<div class="flex-column center">
+    <h1>Edit item</h1>
+    <div class="flex-column center">
+        @using (Html.BeginForm("Edit", "Home", FormMethod.Post,
+        new { @class = "flex-column center create-form", @enctype = "multipart/form-data" }))
+        {
+            if (User.IsInRole("Administrator"))
+            {
+                <input type="file" name="photo" accept="image/*" class="shadow" value="@Model.Picture" />
+                <p>Add Image</p>
+                <div style="height: 1vw;"></div>
+                @Html.LabelFor(Model => Model.Name)
+                @Html.TextBoxFor(Model => Model.Name, new { @class = "input", @Value = Model.Name })
+                @Html.ValidationMessageFor(Model => Model.Name)
+
+                @Html.LabelFor(Model => Model.Description)
+                @Html.TextBoxFor(Model => Model.Description, new { @class = "input", @Value = Model.Description })
+                @Html.ValidationMessageFor(Model => Model.Description)
+
+                @Html.LabelFor(Model => Model.Vendor)
+                @Html.DropDownListFor(Model => Model.Vendor, ViewBag.Vendors as SelectList, "Select a vendor", new { @class = "input", @Value = Model.Vendor })
+                @Html.ValidationMessageFor(Model => Model.Vendor)
+
+                @Html.LabelFor(Model => Model.Price)
+                @Html.TextBoxFor(Model => Model.Price, new { @class = "input", /* @type = "number", */ @step = "0.1", @value = Model.Price})
+                @Html.ValidationMessageFor(Model => Model.Price)
+            }
+
+            @Html.LabelFor(Model => Model.Amount)
+            @Html.TextBoxFor(Model => Model.Amount, new { @class = "input", @type = "number", @Value = Model.Amount })
+            @Html.ValidationMessageFor(Model => Model.Amount)
+
+            @Html.HiddenFor(Model => Model.Id);
+
+            <button type="submit" class="button"><p>Save</p></button>
+        }
+    </div>
+</div>

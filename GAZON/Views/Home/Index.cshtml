@@ -1,0 +1,86 @@
+﻿@model IEnumerable<GAZON.Database.Models.Item>
+@{
+	ViewData["Title"] = "Home Page";
+	string? username = @User.Identity!.Name;
+}
+
+<p id="errorMessage" style="visibility: hidden">Ошибка!</p>
+
+<div class="cards" id="cards">
+	@foreach (var @item in Model)
+	{
+		<div class="card" id="card">
+			@if (item.Picture != null)
+			{
+				<img src="@item.Picture" alt="@item.Name" />
+			}
+			else
+			{
+				<img src="/src/images/UI/png/placeholder.png" alt="Image not Found">
+			}
+			<div class="parallel">
+				<p class="name"> @item.Name</p>
+				<p class="price">@decimal.Round(item.Price, 0, MidpointRounding.AwayFromZero)</p>
+			</div>
+			<div>
+				<p class="description">@item.Description</p>
+			</div>
+			<div class="parallel">
+				<button class="button details">
+					details
+				</button>
+				<button class="button favorite">
+					fav
+				</button>
+			</div>
+			<p style="display: none" class="itemId">@item.Id</p>
+		</div>
+	}
+</div>
+<div class="pop-up-container" id="popUpContainer">
+</div>
+@section Scripts{
+	<script>
+		$().ready(function () {
+			$(".details").click(function () {
+				var button = this;
+				var card = button.parentElement.parentElement;
+				var id = card.querySelector('.itemId').innerHTML;
+				var data = JSON.stringify({ id: id });
+				window.location = '@Url.Action("Details", "Home", new { id = "__id__" })'.replace('__id__', id);
+				
+			});
+			$(".favorite").click(function () {
+				var button = this;
+				var card = button.parentElement.parentElement;
+				var id = card.querySelector('.itemId').innerHTML;
+				var data = JSON.stringify({ id: id });
+				console.log(data);
+				$.ajax({
+					type: 'POST', 
+					url: '@Url.Action("Favorite", "Home")' + '?id=' + id,
+					dataType: "json",
+					success: function (response) {
+						PopUpFunction(response);
+					},
+					error: function (response) {
+						PopUpFunction(response);
+					}
+				});
+			});
+			
+		});
+		var PopUpFunction = function (response){
+				var element = $('#popUpContainer');
+				var popUp = document.createElement("div");
+				popUp.className = "pop-up fade-animation";
+				popUp.innerHTML = `<p>${response.description}</p>`;
+				element.append(popUp);
+				setTimeout(function (){
+					popUp.className = "pop-up";
+					setTimeout(()=>popUp.remove(),500);}
+					,1500);
+				
+		};
+	</script>
+}

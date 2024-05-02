@@ -1,0 +1,89 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using GAZON.Database.Models
+@using System
+
+@model IEnumerable<GAZON.Database.Models.Staff>
+
+@{
+    PickupPoint point = ViewBag.Point;
+
+    string GetStatistic(Staff staff)
+    {
+        var ordersSold = staff.PickupPointOrders.Count();
+
+        var ItemsSold = staff.PickupPointOrders
+        .Select(o => o.OrderNavigation)
+        .Count();
+
+        var lastPickUpDate = staff
+                            .PickupPointOrders
+                            .ToList()
+                            .Count != 0
+        ?
+                            staff
+                            .PickupPointOrders
+                            .Last().PickupDate
+                            .ToString()!.Remove(10, 9)
+        : "None";
+
+        return $"Orders sold: {ordersSold} \r\n Items sold: {ItemsSold} \n Last pickup date: {lastPickUpDate}";
+
+    }
+}
+
+<div class="flex-column center">
+    <div class="point-details">
+        @if (ViewBag.Point.Picture != null)
+        {
+
+            <img class="point-img" src="../@point.Picture" />
+        }
+        else
+        {
+            <img class="point-img" src="../src/images/Uploaded/Points/gazon_good.jpg" alt="">
+            }
+        <div class="flex-row">
+            <div>
+                <p>GAZON POINT</p>
+                <p id="rating">@point.Rating</p>
+                <p id="adress">@point.Address</p>
+            </div>
+
+            <div>
+                <p id="statistics">
+                    Orders sold: @point.PickupPointOrders.Count() <br>
+                    Employed: @point.Staff.Count() <br>
+                    Items sold: @point.Orders.Count()  <br>
+                    Last pickup date: @point.PickupPointOrders.Last().PickupDate.ToString()!.Remove(10,9)
+                </p>
+            </div>
+        </div>
+        <div class="flex-column center">
+            <div class="employees">
+                @foreach (var staff in Model)
+                {
+                    <div class="employee">
+                        <img class="img" src="../src/images/UI/png/placeholder.png" alt="">
+                        <div>
+                            @if (staff.UserNavigation == null)
+                            {
+                                <p class="name"> Employee </p>
+                            }
+                            else
+                            {
+                                <p class="name"> @staff.UserNavigation.Name</p>
+                            }
+
+                            <p id="statistics">
+                                id: @staff.Id <br/>
+                                @GetStatistic(staff)
+                                </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+</div>

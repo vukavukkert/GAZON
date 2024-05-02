@@ -1,0 +1,59 @@
+﻿@using  System.Security.Claims
+@model GAZON.Database.Models.User
+
+
+@{
+    ViewData["Title"] = "GAZON";
+}
+
+<div class="flex-column center">
+    @if (!this.User.Identity!.IsAuthenticated)
+    {
+        <div class="auth-form shadow">
+            <form id="loginForm">
+                <div class="flex-column center">
+                    <p>Welcome back!</p>
+                    <input type="text" placeholder="Login" name="login" class="input" id="loginInput">
+                    <input type="password" placeholder="Password" name="password" class="input" id="passwordInput">
+                    <button class="button" id="loginFormButton"><P>Log in</P></button>
+                </div>
+            </form>
+        </div>
+        <p id="errorMessage" style="visibility: hidden">Ошибка!</p>
+    }
+    @if (this.User.Identity!.IsAuthenticated)
+    {
+        <p>Welcome @User.Identity!.Name, your role is @User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value.</p>
+
+
+        <a style="text-decoration: underline; cursor: pointer;" asp-action="LogOut" asp-controller="Auth">Log out</a>
+    }
+
+</div>
+@section Scripts {
+    <script>
+        $('#loginFormButton').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Index", "Auth")',
+                data: $('#loginForm').serialize(),
+                dataType: 'json',
+                success: function (response) {
+                    if (response.success) {
+                        $('#errorMessage').css("visibility", "hidden");
+                        window.location.reload();
+                    } else {
+                        $('#errorMessage').html(JSON.parse(response.responseText).description);
+                        $('#errorMessage').css("visibility", "visible");
+                    }
+                },
+                error: function (response) {
+                    $('#errorMessage').html(JSON.parse(response.responseText).description);
+                    $('#errorMessage').css("visibility", "visible");
+                }
+            });
+        });
+    </script>
+    
+}

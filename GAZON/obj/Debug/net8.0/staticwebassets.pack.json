@@ -1,0 +1,429 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GAZON.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GAZON.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\css\\reset.css",
+      "PackagePath": "staticwebassets\\css\\reset.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\Add.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\Add.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\Filter.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\Filter.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\GAZON.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\GAZON.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\Point.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\Point.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\Profile.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\Profile.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\Search.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\Search.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\Star.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\Star.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\png\\placeholder.png",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\png\\placeholder.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Add.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Add.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Filter.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Filter.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\GAZON.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\GAZON.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Point.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Point.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Profile.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Profile.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Search.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Search.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Star.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Star.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-03-07 19.25.58.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-03-07 19.25.58.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-02-15.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-02-15.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-08.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-08.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-18.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-18.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-39.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-39.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-56.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-03-56.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-04-07.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-04-07.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-04-36.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-04-36.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-04-55.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-04-55.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-05-08.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-05-08.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-05-23.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-05-23.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-10-36.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-10-36.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-13-55.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-13-55.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-04-04 19-20-32.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\2024-04-04 19-20-32.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\36957dab47f399e7db3b7c7129de6d20-book-icon-in-pink-color.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\36957dab47f399e7db3b7c7129de6d20-book-icon-in-pink-color.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\972.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\972.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\E9AOYIPX0AQ9A7d.jpg",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\E9AOYIPX0AQ9A7d.jpg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\free-opened-book-icon-3163-thumb.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\free-opened-book-icon-3163-thumb.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\memes-album-01.j3f7t3..jpg",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\memes-album-01.j3f7t3..jpg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\Скриншот 04-11-2023 191923.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\Скриншот 04-11-2023 191923.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\Скриншот 06-11-2023 204015.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\Скриншот 06-11-2023 204015.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\Скриншот 22-01-2024 184739.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Items\\Скриншот 22-01-2024 184739.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Points\\gazon_bad.png",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Points\\gazon_bad.png"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Points\\gazon_good.jpg",
+      "PackagePath": "staticwebassets\\src\\images\\Uploaded\\Points\\gazon_good.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GAZON.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.GAZON.props",
+      "PackagePath": "build\\GAZON.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.GAZON.props",
+      "PackagePath": "buildMultiTargeting\\GAZON.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.GAZON.props",
+      "PackagePath": "buildTransitive\\GAZON.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

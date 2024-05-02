@@ -1,0 +1,14 @@
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\bin\Debug\net8.0\GAZON.Database.deps.json
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\bin\Debug\net8.0\GAZON.Database.runtimeconfig.json
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\bin\Debug\net8.0\GAZON.Database.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\bin\Debug\net8.0\GAZON.Database.pdb
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.csproj.AssemblyReference.cache
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.GeneratedMSBuildEditorConfig.editorconfig
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.AssemblyInfoInputs.cache
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.AssemblyInfo.cs
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.csproj.CoreCompileInputs.cache
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\refint\GAZON.Database.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.pdb
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.genruntimeconfig.cache
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\ref\GAZON.Database.dll
