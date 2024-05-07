@@ -452,3 +452,4 @@ E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON\bin\Debug\net8.0\Microsof
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON\obj\Debug\net8.0\GAZON.MvcApplicationPartsAssemblyInfo.cs
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON\obj\Debug\net8.0\GAZON.sourcelink.json

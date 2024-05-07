@@ -297,6 +297,10 @@
       "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\GAZON.svg"
     },
     {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Heart.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Heart.svg"
+    },
+    {
       "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Point.svg",
       "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Point.svg"
     },
@@ -311,6 +315,14 @@
     {
       "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\Star.svg",
       "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\Star.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\heart_filled.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\heart_filled.svg"
+    },
+    {
+      "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\UI\\svg\\heart_outline.svg",
+      "PackagePath": "staticwebassets\\src\\images\\UI\\svg\\heart_outline.svg"
     },
     {
       "Id": "E:\\Vukkert\\Programming\\csharp\\ASPNET\\GAZON\\GAZON\\GAZON\\wwwroot\\src\\images\\Uploaded\\Items\\2024-03-07 19.25.58.png",

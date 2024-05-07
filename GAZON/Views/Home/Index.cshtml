@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GAZON.Database.Models.Item>
+﻿@model IEnumerable<GAZON.Models.ItemViewModel>
 @{
 	ViewData["Title"] = "Home Page";
 	string? username = @User.Identity!.Name;
@@ -6,6 +6,13 @@
 
 <p id="errorMessage" style="visibility: hidden">Ошибка!</p>
 
+@if (Model.Count() <= 0)
+{
+	<div style=" display: flex; justify-content: center">
+			<p >Пока что ничего нет! :)</p>
+	</div>
+
+}
 <div class="cards" id="cards">
 	@foreach (var @item in Model)
 	{
@@ -29,14 +36,15 @@
 				<button class="button details">
 					details
 				</button>
-				<button class="button favorite">
-					fav
-				</button>
+				<div class="fav-box">
+					<input type="checkbox" class="favorite" checked="@item.isFavorite">
+				</div>
 			</div>
 			<p style="display: none" class="itemId">@item.Id</p>
 		</div>
 	}
 </div>
+
 <div class="pop-up-container" id="popUpContainer">
 </div>
 @section Scripts{
@@ -52,14 +60,17 @@
 			});
 			$(".favorite").click(function () {
 				var button = this;
-				var card = button.parentElement.parentElement;
+				var card = button.parentElement.parentElement.parentElement;
 				var id = card.querySelector('.itemId').innerHTML;
-				var data = JSON.stringify({ id: id });
+				var isChecked = button.checked;
+				var data ={ id: id,
+					 isChecked : isChecked};
 				console.log(data);
 				$.ajax({
 					type: 'POST', 
-					url: '@Url.Action("Favorite", "Home")' + '?id=' + id,
+					url: '@Url.Action("Favorite", "Home")',
 					dataType: "json",
+					data: data,
 					success: function (response) {
 						PopUpFunction(response);
 					},

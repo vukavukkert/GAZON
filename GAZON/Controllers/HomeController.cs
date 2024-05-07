@@ -19,9 +19,12 @@ namespace GAZON.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(List<Item>? itemList = null)
+        public async Task<IActionResult> Index(List<ItemViewModel>? itemList = null)
         {
-            itemList ??= await _context.Items.ToListAsync();
+            string login = User.Identity.Name;
+            var user = _context.Users.FirstOrDefault(u => u.Login == login);
+            itemList ??= ItemViewModel.ConvertItemtoModel(await _context.Items.ToListAsync(), user); 
+            
             return View(itemList);
         }
         public async Task<IActionResult> Search(string key, string filter)
@@ -37,7 +40,10 @@ namespace GAZON.Controllers
             {
                 itemList = await _context.Items.Where(i => i.VendorNavigation.Name.Contains(key)).ToListAsync();
             }
-            return View(nameof(Index), itemList);
+            string login = User.Identity.Name;
+            var user = _context.Users.FirstOrDefault(u => u.Login == login);
+            var itemViewModel = ItemViewModel.ConvertItemtoModel(itemList, user);
+            return View(nameof(Index), itemViewModel);
         }
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create()
@@ -145,8 +151,20 @@ namespace GAZON.Controllers
 			}
 		}
         [Authorize]
+        public async Task<IActionResult> Favorites()
+        {
+            string login = User.Identity.Name;
+            if (login == null)
+            {
+                return Unauthorized();
+            }
+            var user = _context.Users.FirstOrDefault(u => u.Login == login);
+            var itemViewModel = ItemViewModel.ConvertItemtoModel(user.UserFavorites.Select(i => i.ItemNavigation).ToList(), user);
+            return View(nameof(Index), itemViewModel);
+        }
+        [Authorize]
         [HttpPost]
-		public async Task<IActionResult> Favorite(int? id)
+		public async Task<IActionResult> Favorite(int? id, bool isChecked)
 		{
 			try
 			{
@@ -160,13 +178,31 @@ namespace GAZON.Controllers
 				{
 					return BadRequest(new { success = false, description = "Item not found" });
 				}
-                //logib
-                return Ok( new {success = true, description = "Successfully added to favorites" });
+                
+                string login = User.Identity.Name;
+                var user = _context.Users.FirstOrDefault(u => u.Login == login);
+                
+                if (isChecked)
+                {
+                    var favorite = new UserFavorite();
+                    favorite.Item = item.Id;
+                    favorite.User = user.Id;
+                    user.UserFavorites.Add(favorite);
+                    await _context.SaveChangesAsync();
+                   return Ok( new {success = true, description = "Successfully added to favorites" }); 
+                }
+                else
+                {
+                    user.UserFavorites.Remove(user.UserFavorites.FirstOrDefault(f => f.Item == item.Id));
+                    await _context.SaveChangesAsync();
+                    return Ok( new {success = true, description = "Successfully removed from favorites" }); 
+                }
+                
 			}
 			catch (Exception e)
 			{
 				Console.WriteLine(e.ToString());
-				return BadRequest(new { success = false, description = e.ToString() });
+				return BadRequest(new { success = false, description = "Hi"});
 			}
 		}
 		[Authorize(Roles = "Administrator")]

@@ -12,3 +12,4 @@ E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.pdb
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.genruntimeconfig.cache
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\ref\GAZON.Database.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Database\obj\Debug\net8.0\GAZON.Database.sourcelink.json

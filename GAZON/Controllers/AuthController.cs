@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using GAZON.Models;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace MarketPlace.Controllers
 {
@@ -24,30 +26,43 @@ namespace MarketPlace.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string login, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Login == login);
-
-            if (user == null)
+            try
             {
-                return BadRequest(new { success = false, description = "Пользователь не найден" });
+                var user = await _context.Users.FirstOrDefaultAsync(x => x.Login == login);
+
+                if (user == null)
+                {
+                    return BadRequest(new { success = false, description = "Пользователь не найден" });
+                }
+
+                if (!HashService.VerifyHashedPassword(user.Password, password))
+                {
+                    return BadRequest(new { success = false, description = "Неправильно введены логин или пароль" });
+                }
+            
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
+                    new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleNavigation.Name)
+                };
+                
+                var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                await HttpContext.SignInAsync(claimsPrincipal);
+
+                return Ok(new { success = true });
             }
-
-            if (user.Password != password)
+            catch (Exception e)
             {
-                return BadRequest(new { success = false, description = "Неправильно введены логин или пароль" });
+                Console.WriteLine(e);
+                return BadRequest(new { success = false, description = e.ToString()});
             }
-
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.RoleNavigation.Name)
-            };
-            var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
-            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-            await HttpContext.SignInAsync(claimsPrincipal);
-
-            return Ok(new { success = true });
-
         }
+
+        /*public async Task<IActionResult> Register()
+        {
+            return View();
+        }*/
         public async Task<IActionResult> LogOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

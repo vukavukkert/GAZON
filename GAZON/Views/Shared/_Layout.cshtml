@@ -64,6 +64,11 @@
                     <img src="~/src/images/UI/svg/Profile.svg" alt="Profile">
                 </a>
             </button>
+            <button>
+                <a asp-action="Favorites" asp-controller="Home">
+                    <img src="~/src/images/UI/svg/Heart.svg" alt="Favorites">
+                </a>
+            </button>
             @if (User.IsInRole("Administrator"))
                 {
                     <button>

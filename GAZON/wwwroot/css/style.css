@@ -462,7 +462,34 @@ h1 {
         display: block;
     }
 }
-
+.fav-box{
+    margin: 10px;
+    & input[type="checkbox"]{
+        -webkit-appearance: none;
+        appearance: none;
+        content: '';
+        background-image: url(../src/images/UI/svg/heart_outline.svg);
+        background-repeat: no-repeat;
+        margin: 0;
+        color: transparent;
+        display: grid;
+        place-content: center;
+        z-index: 1;
+        &::before{
+            content: url(../src/images/UI/svg/heart_filled.svg);
+            transform: scale(0);
+            transform-origin: center center;
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 4em var(--color-red-magenta);
+            z-index: 0;
+        }
+        &:checked{
+            &::before{
+                transform: scale(1);
+            }
+        }
+    }
+}
 .pop-up-container{
     position: fixed;
     left: 45%;
