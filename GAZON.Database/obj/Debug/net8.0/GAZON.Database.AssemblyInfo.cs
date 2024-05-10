@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GAZON.Database")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67a81fae6a923fe733f07dfd1a1f32b7531a26d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d830a13f3c0fb6bde9c1724433363284d2715420")]
 [assembly: System.Reflection.AssemblyProductAttribute("GAZON.Database")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GAZON.Database")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

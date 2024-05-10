@@ -1,43 +1,31 @@
-﻿@model GAZON.Database.Models.Item
+﻿@using System.Runtime.InteropServices.JavaScript
+@model GAZON.Models.DetailViewModel
 
 @{
     ViewData["Title"] = "GAZON";
 }
 
 
-<div class="item-details flex-row space-around">
-    @if (Model.Picture != null)
+<div class="details-container">
+    @if (Model.item.Picture != null)
     {
-        <img src="@Model.Picture" class="shadow"/>
+        <img src="@Model.item.Picture" class="details-img shadow"/>
     }
     else
     {
-        <img src="/src/images/UI/png/placeholder.png" alt="" class="shadow">
+        <img src="/src/images/UI/png/placeholder.png" alt="" class="details-img shadow">
 
     }
-    <div>
-        <div class="flex-row space-between">
-            <div>
-                <p class="name">@Model.Name</p>
-                <p class="vendor-name">@ViewBag.VendorName</p>
-                <p class="amount">Amount: @Model.Amount</p>
-            </div>
-            <div class="pay-card flex-column space-around center shadow">
-                <p class="price">@Model.Price</p>
-                <button class="button">
-                    <p>Soon</p>
-                </button>
-            </div>
-        </div>
-
-        <p class="description">
-            @Model.Description
-        </p>
+    <div class="detail-description-right">
+        <p class="details-name">@Model.item.Name</p>
+        <p class="details-vendor-name">@Model.vendor.Name</p>
+      
+        <p class="details-description">@Model.item.Description</p>
         @if (User.IsInRole("Administrator"))
         {
             @using (@Html.BeginForm("Delete", "Home", FormMethod.Post))
             {
-                @Html.HiddenFor(Model => Model.Id)
+                @Html.HiddenFor(Model => Model.item.Id)
                 <input type="submit" style="text-decoration: underline;color: darkred;" value="Delete">
             }
         }
@@ -45,11 +33,48 @@
         {
             @using (@Html.BeginForm("Edit", "Home", FormMethod.Get))
             {
-                @Html.HiddenFor(Model => Model.Id)
+                @Html.HiddenFor(Model => Model.item.Id)
                 <input type="submit" style="text-decoration: underline;" value="Edit">
-
             }
         }
     </div>
+    <div class="detail-price-card shadow">
+        <p class="details-amount">Amount: @Model.item.Amount</p>
+        <p class="details-price">@decimal.Round(Model.item.Price, 0, MidpointRounding.AwayFromZero)</p>
+        <button class="button">Soon</button>
+    </div>
+</div>
 
+
+<div class="container">
+    @if (Model.reviews!= null)
+    {
+        @if(Model.reviews.Count > 0)
+        foreach (var review in Model.reviews)
+        {
+            <div class="review-container shadow">
+                <img src="/src/images/UI/png/placeholder.png" alt="" class="profile-img">
+                <p class="rating">@review.Rating</p>
+                <p class="review-user">@review.UserNavigation.Name</p>
+                <p class="review-content">@review.Content</p>
+                @if (@review.ReviewAttachments.Count > 0)
+                {
+                    <div class="review-attachment-container">
+                    @foreach (var attachment in review.ReviewAttachments)
+                    {
+                        @if (attachment.Image == null)
+                        {
+                        <img class="review-attachment" src="/src/images/UI/png/placeholder.png" alt="">
+                        }
+                        else
+                        {
+                        <img class="review-attachment" src="@attachment.Image" alt="">
+                        }
+                    }
+                    </div>
+                }
+                <p class="review-date">@review.Date</p>
+            </div>
+        }
+    }
 </div>

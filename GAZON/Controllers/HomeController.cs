@@ -141,8 +141,15 @@ namespace GAZON.Controllers
 					return BadRequest(new { success = false, description = "Item not found" });
 				}
 
-				ViewBag.VendorName = await _context.Vendors.Where(x => x.Id == item.Vendor).Select(v => v.Name).FirstOrDefaultAsync();
-                return View(item);
+                var reviews = await (from r in _context.Reviews
+                    join ir in _context.ItemReviews on r.Id equals ir.Review
+                    where ir.Item == item.Id select r).ToListAsync();
+                
+                var vendor = item.VendorNavigation;
+
+                var detailItem = new DetailViewModel(item, reviews, vendor);
+                
+                return View(detailItem);
 			}
 			catch (Exception e)
 			{
