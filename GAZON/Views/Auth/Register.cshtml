@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "GAZON";
+}
+<form id="registerForm" class="flex-column center create-form">
+    <label for="Name">Name</label>
+    <input type="text" name="Name" id="Name" class="input">
+    
+    <label for="Login">Login</label>
+    <input type="text" name="Login" id="Login" class="input">
+    
+    <label for="Email">Email</label>
+    <input type="email" name="Email" id="Email" class="input">
+    
+    <label for="Password">Password</label>
+    <input type="password" name="Password" id="Password" class="input">
+    
+    <button class="button" id="registerButton">Register</button>
+<p id="errorMessage" style="visibility: hidden">Ошибка!</p>
+</form>
+
+@section Scripts {
+    <script>
+        $().ready(function (){
+            $('#registerButton').click(function (e) {
+                                e.preventDefault();
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '@Url.Action("Register", "Auth")',
+                                    data: $('#registerForm').serialize(),
+                                    dataType: 'json',
+                                    success: function (response) {
+                                        if (response.success) {
+                                            $('#errorMessage').css("visibility", "hidden");
+                                            window.location = '@Url.Action("Index", "Auth")';
+                                        } else {
+                                            $('#errorMessage').html(JSON.parse(response.responseText).description);
+                                            $('#errorMessage').css("visibility", "visible");
+                                        }
+                                    },
+                                    error: function (response) {
+                                        $('#errorMessage').html(JSON.parse(response.responseText).description);
+                                        $('#errorMessage').css("visibility", "visible");
+                                    }
+                                });
+                            });
+        });
+    </script>
+}

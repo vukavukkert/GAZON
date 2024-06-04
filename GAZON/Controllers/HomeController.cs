@@ -213,7 +213,7 @@ namespace GAZON.Controllers
 			}
 		}
 		[Authorize(Roles = "Administrator")]
-        [HttpPost]
+        [HttpDelete]
         public async Task<IActionResult> Delete(int? id)
         {
             try
@@ -222,13 +222,93 @@ namespace GAZON.Controllers
                 if (item == null) throw new Exception("Not a valid id");
                 _context.Items.Remove(item!);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Ok(new { success = true, description = "Deleted successfully" });
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                return NotFound();
+                return BadRequest(new { success = false, description = e.ToString()});
             }
+        }
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteFavorites()
+        {
+            try
+            {
+                string login = User.Identity.Name;
+                var user = _context.Users.FirstOrDefault(u => u.Login == login);
+                
+                user.UserFavorites.Clear();
+
+                await _context.SaveChangesAsync();
+                return Ok(new { success = true, description = "Successfully cleared from favorites" });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest(new { success = false, description = "Error message: " + e });
+            }
+        }
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteReview(int? id)
+        {
+            try
+            {
+                if (id == null) return BadRequest(new { success = false, description = "Id is null" });
+                
+                var review = await _context.Reviews.FirstOrDefaultAsync(r => r.Id == id);
+                
+                if (review == null) return BadRequest(new { success = false, description = "Review is null" });
+
+                _context.Reviews.Remove(review);
+                await _context.SaveChangesAsync();
+                return Ok(new { success = true, description = "Successfully removed review" });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest(new { success = false, description = "Error message: " + e.Message });
+            }
+        }
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteReviewAttachment(int? id)
+        {
+            return Ok();
+		}
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> EditReview(string reviewId, string content, string rating, IFormFile[]? images)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(reviewId)) throw new Exception("review id is null");
+                var review = _context.Reviews.FirstOrDefault(r => r.Id == int.Parse(reviewId));
+                if (review == null) throw new Exception("review is null");
+           
+                review.Content = content;
+                review.Rating = Decimal.Parse(rating);
+
+                if (images != null)
+                {
+                    for (int i = 0; i < images.Length; i++)
+                    {
+                        var imagePath = await PhotoSaver.SavePhoto(images[i], "/src/images/Uploaded/Items/");
+                        var image = new ReviewAttachment{Date = DateTime.Now, Image = imagePath};
+                        review.ReviewAttachments.Add(image);
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { success = false, description = "Error message: " + e.Message });
+            }
+            return Ok(new { success = false, description = "Successfully edited reply"});
         }
     }
 }

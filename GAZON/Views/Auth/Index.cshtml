@@ -20,6 +20,7 @@
             </form>
         </div>
         <p id="errorMessage" style="visibility: hidden">Ошибка!</p>
+        <a id="registerLink" style="cursor: pointer; text-decoration: underline">Register</a>
     }
     @if (this.User.Identity!.IsAuthenticated)
     {
@@ -32,28 +33,35 @@
 </div>
 @section Scripts {
     <script>
-        $('#loginFormButton').click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("Index", "Auth")',
-                data: $('#loginForm').serialize(),
-                dataType: 'json',
-                success: function (response) {
-                    if (response.success) {
-                        $('#errorMessage').css("visibility", "hidden");
-                        window.location.reload();
-                    } else {
-                        $('#errorMessage').html(JSON.parse(response.responseText).description);
-                        $('#errorMessage').css("visibility", "visible");
-                    }
-                },
-                error: function (response) {
-                    $('#errorMessage').html(JSON.parse(response.responseText).description);
-                    $('#errorMessage').css("visibility", "visible");
-                }
-            });
-        });
+    $().ready(function (){
+         $('#loginFormButton').click(function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("Index", "Auth")',
+                        data: $('#loginForm').serialize(),
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                $('#errorMessage').css("visibility", "hidden");
+                                window.location.reload();
+                            } else {
+                                $('#errorMessage').html(JSON.parse(response.responseText).description);
+                                $('#errorMessage').css("visibility", "visible");
+                            }
+                        },
+                        error: function (response) {
+                            $('#errorMessage').html(JSON.parse(response.responseText).description);
+                            $('#errorMessage').css("visibility", "visible");
+                        }
+                    });
+                });
+         $('#registerLink').click(function (e){
+             e.preventDefault();
+             window.location = '@Url.Action("Register", "Auth")';
+         });
+    });
+       
     </script>
-    
+
 }

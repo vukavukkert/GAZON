@@ -9,7 +9,8 @@
     @using (Html.BeginForm("Create", "Home", FormMethod.Post, 
         new { @class = "flex-column center create-form", @enctype="multipart/form-data" }))
     {
-        <input type="file" name="photo" src="../src/images/UI/png/placeholder.png" accept="image/*" class="shadow" />
+        <img src="../src/images/UI/png/placeholder.png" id="form-image"/>
+        <input type="file" id="file-image" name="photo" src="../src/images/UI/png/placeholder.png/" accept="image/*" class="shadow" />
         <p>Add Image</p>
         <div style="height: 1vw;"></div>
         @Html.LabelFor(Model => Model.Name)
@@ -35,3 +36,22 @@
         <button type="submit" class="button"><p>Create</p></button>
     }
 </div>
+@section Scripts {
+    <script>
+    $('#form-image').click(function (e){
+        $('#file-image').click();
+    });
+    $('#file-image').change(function (e){
+      for (var i = 0; i < e.target.files.length; i++){
+          var file = e.target.files[i];
+          var img = document.createElement("img");
+         var reader = new FileReader();
+         reader.onloadend = function() {
+         $('#form-image').attr("src", `${reader.result}`);
+         }
+         reader.readAsDataURL(file);
+         
+      }  
+    });
+</script>
+}

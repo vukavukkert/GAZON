@@ -576,3 +576,18 @@ img.profile-img{
     float: right;
     color: var(--color-pale-green);
 }
+.review-delete{
+    color: var(--color-red-magenta);
+    text-decoration: underline;
+    display: block;
+    cursor: pointer;
+}
+.review-edit{
+    color: var(--color-yellow-green);
+    text-decoration: underline;
+    display: block;
+    cursor: pointer;
+}
+.review-edit-attachment{
+    flex-direction: column;
+}

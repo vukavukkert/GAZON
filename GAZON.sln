@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAZON", "GAZON\GAZON.csproj", "{41970A2A-BBC7-45CF-8F56-3CAC6F7E0550}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GAZON", "GAZON\GAZON.csproj", "{41970A2A-BBC7-45CF-8F56-3CAC6F7E0550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAZON.Database", "GAZON.Database\GAZON.Database.csproj", "{6FB9D55C-A7C7-40B1-8A53-8D028FF80243}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GAZON.Database", "GAZON.Database\GAZON.Database.csproj", "{6FB9D55C-A7C7-40B1-8A53-8D028FF80243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAZON.Test", "GAZON.Test\GAZON.Test.csproj", "{87EF1B8A-D51C-4D5F-94EB-4909D27E5A7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6FB9D55C-A7C7-40B1-8A53-8D028FF80243}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FB9D55C-A7C7-40B1-8A53-8D028FF80243}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FB9D55C-A7C7-40B1-8A53-8D028FF80243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87EF1B8A-D51C-4D5F-94EB-4909D27E5A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EF1B8A-D51C-4D5F-94EB-4909D27E5A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EF1B8A-D51C-4D5F-94EB-4909D27E5A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EF1B8A-D51C-4D5F-94EB-4909D27E5A7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

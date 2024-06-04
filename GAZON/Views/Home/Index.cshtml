@@ -1,18 +1,25 @@
 ﻿@model IEnumerable<GAZON.Models.ItemViewModel>
 @{
 	ViewData["Title"] = "Home Page";
-	string? username = @User.Identity!.Name;
 }
 
 <p id="errorMessage" style="visibility: hidden">Ошибка!</p>
 
-@if (Model.Count() <= 0)
-{
-	<div style=" display: flex; justify-content: center">
-			<p >Пока что ничего нет! :)</p>
-	</div>
+<div style="display: flex; justify-content: center">
+	@if (Model.Count() <= 0)
+	{
+		<p >Пока что ничего нет! :)</p>
+	}
+	else
+	{
+		@if (this.Url.PageLink()!.Contains("Favorites"))
+		{
+			<button class="button" id="deleteFavorites">Удалить все
+				<br/> из избранного</button>
+		}
+	}
+</div>
 
-}
 <div class="cards" id="cards">
 	@foreach (var @item in Model)
 	{
@@ -79,6 +86,22 @@
 					}
 				});
 			});
+			$("#deleteFavorites").click(function (){
+				$.ajax({
+				type: 'DELETE',
+				url: '@Url.Action("DeleteFavorites", "Home")',
+				success: function (response){
+					PopUpFunction(response);
+					setTimeout(()=>{
+						window.location.reload();
+					}, 500);
+					
+				},
+				error: function (response){
+					PopUpFunction(response);
+				}
+				});
+			} );
 			
 		});
 		var PopUpFunction = function (response){

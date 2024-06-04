@@ -23,19 +23,11 @@
         <p class="details-description">@Model.item.Description</p>
         @if (User.IsInRole("Administrator"))
         {
-            @using (@Html.BeginForm("Delete", "Home", FormMethod.Post))
-            {
-                @Html.HiddenFor(Model => Model.item.Id)
-                <input type="submit" style="text-decoration: underline;color: darkred;" value="Delete">
-            }
+            <a id="deleteButton" style="text-decoration: underline;  cursor: pointer; color: var(--color-red-magenta)">Delete</a>
         }
         @if (User.IsInRole("Administrator") || User.IsInRole("Staff"))
         {
-            @using (@Html.BeginForm("Edit", "Home", FormMethod.Get))
-            {
-                @Html.HiddenFor(Model => Model.item.Id)
-                <input type="submit" style="text-decoration: underline;" value="Edit">
-            }
+            <a id="editButton" style="text-decoration: underline; cursor: pointer;">Edit</a>
         }
     </div>
     <div class="detail-price-card shadow">
@@ -50,31 +42,178 @@
     @if (Model.reviews!= null)
     {
         @if(Model.reviews.Count > 0)
-        foreach (var review in Model.reviews)
-        {
-            <div class="review-container shadow">
-                <img src="/src/images/UI/png/placeholder.png" alt="" class="profile-img">
-                <p class="rating">@review.Rating</p>
-                <p class="review-user">@review.UserNavigation.Name</p>
-                <p class="review-content">@review.Content</p>
-                @if (@review.ReviewAttachments.Count > 0)
-                {
-                    <div class="review-attachment-container">
-                    @foreach (var attachment in review.ReviewAttachments)
+            foreach (var review in Model.reviews)
+            {
+                <div class="review-container shadow">
+                    <img src="/src/images/UI/png/placeholder.png" alt="" class="profile-img">
+                    <p style="display: none" class="reviewId">@review.Id</p>
+                    <p class="rating">@review.Rating</p>
+                    <p class="review-user">@review.UserNavigation.Name</p>
+                    <p class="review-content">@review.Content</p>
+                    @if (@review.ReviewAttachments.Count > 0)
                     {
-                        @if (attachment.Image == null)
-                        {
-                        <img class="review-attachment" src="/src/images/UI/png/placeholder.png" alt="">
-                        }
-                        else
-                        {
-                        <img class="review-attachment" src="@attachment.Image" alt="">
-                        }
+                        <div class="review-attachment-container">
+                            @foreach (var attachment in review.ReviewAttachments)
+                            {
+                                @if (attachment.Image == null)
+                                {
+                                    <img class="review-attachment" src="/src/images/UI/png/placeholder.png" alt="">
+                                }
+                                else
+                                {
+                                    <img class="review-attachment" src="@attachment.Image" alt="">
+                                }
+                            }
+                        </div>
                     }
+                    @if (review.UserNavigation.Login == this.User.Identity!.Name || User.IsInRole("Administrator"))
+                    {
+                        <a class="review-delete" id="deleteReviewButton">Delete</a>
+                    }
+                    <p class="review-date">@review.Date</p>
+                    <a class="review-edit editReviewButton"  data-toggle="modal" data-target="#exampleModalCenter{@review.Id}">Edit</a>
+
+                    <div class="modal fade" id="exampleModalCenter{@review.Id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Edit review</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="/src/images/UI/png/placeholder.png" alt="" class="profile-img">
+                                    <p style="display: none" class="reviewId">@review.Id</p>
+                                    
+                                    <p class="review-user">@review.UserNavigation.Name</p>
+                                    <input type="text" class="review-content input" id="review-edit-content" value="@review.Content">
+                                    @if (@review.ReviewAttachments.Count > 0)
+                                    {
+                                        <div class="review-attachment-container review-edit-attachment">
+                                            @foreach (var attachment in review.ReviewAttachments)   
+                                            {
+                                                @if (attachment.Image == null)
+                                                {
+                                                    <img class="review-attachment" src="/src/images/UI/png/placeholder.png" alt="">
+                                                }
+                                                else
+                                                {
+                                                    <img class="review-attachment" src="@attachment.Image" alt="">
+                                                }
+                                            }
+                                        <form id="editCommentForm" enctype="multipart/form-data" action="">
+                                            <input type="file" name="images" id="images" multiple/>
+                                        </form>
+                                        </div>
+                                    }
+                                    <p class="rating">
+                                        <input type="number" step="0.1" class="rating" id="review-edit-rating" value="@review.Rating">
+                                    </p>    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind...</button>
+                                    <button type="button" class="btn btn-primary send-input-changes">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                }
-                <p class="review-date">@review.Date</p>
-            </div>
-        }
+                </div>
+            }
     }
+    
+
 </div>
+<div class="pop-up-container" id="popUpContainer">
+</div>
+@section Scripts {
+    <script>
+        $().ready(function (){
+            $('#deleteReviewButton').click(function (e) {
+                                e.preventDefault();
+                                var reviewId = this.parentElement.querySelector('#reviewId').innerHTML;
+                                console.log(reviewId);
+                                $.ajax({
+                                        type: 'DELETE',
+                                        url: '@Url.Action("DeleteReview", "Home")',
+                                        data: {id: reviewId},
+                                        dataType: 'json',
+                                        success: function (response) {
+                                                PopUpFunction(response);
+                                                setTimeout(()=>{window.location.reload() },500);
+                                        },
+                                        error: function (response) {
+                                            PopUpFunction(response);
+                                        }
+                                });
+                            });
+              $('.send-input-changes').click(function (e) {
+                                            e.preventDefault();
+                                            var formElement = e.target.parentElement.parentElement;
+                                            var content = formElement.querySelector("#review-edit-content").value;
+                                            var rating = formElement.querySelector("#review-edit-rating").value;
+                                            var images = formElement.querySelector("#images").files;
+                                            var id = formElement.querySelector(".reviewId").innerHTML;
+                                            
+                                            var formData = new FormData();
+                                            
+                                            formData.append("reviewId", id);
+                                            formData.append("content", content);
+                                            formData.append("rating", rating);
+                                            formData.append("images", null);
+                                            for (var i = 0; i < images.length; i++){
+                                                formData.append('images', images[i]);
+                                            }
+                                           $.ajax({
+                                                type: 'POST',
+                                                url: "@Url.Action("EditReview", "Home")",
+                                                data: formData,
+                                                processData: false,
+                                                contentType: false,
+                                                success: function (response) {
+                                                         PopUpFunction(response);
+                                                        setTimeout(()=>{window.location.reload() },500);
+                                                },
+                                                error: function (response) {
+                                                     PopUpFunction(response);
+                                                }
+                                            });
+                                        });
+            $('#deleteButton').click(function (e) {
+                            e.preventDefault();
+                            let itemId = @Model.item.Id;
+                            $.ajax({
+                                type: 'DELETE',
+                                url: '@Url.Action("Delete", "Home")',
+                                data: {id: itemId},
+                                dataType: 'json',
+                                success: function (response){
+                                    PopUpFunction(response);
+                                    setTimeout(()=>{window.location ='@Url.Action("Index")' },500);
+                                },
+                                error: function (response){
+                                    PopUpFunction(response);
+                                }
+                            });
+            });
+            $('#editButton').click(function (e) {
+                            e.preventDefault();
+                            window.location = '@Url.Action("Edit", "Home", new { id = Model.item.Id })';
+            });
+            $('.button-attachment').click(function (e){
+                e.target.parentElement.querySelector("#images").click();
+            })
+        });
+        var PopUpFunction = function (response){
+        				var element = $('#popUpContainer');
+        				var popUp = document.createElement("div");
+        				popUp.className = "pop-up fade-animation";
+        				popUp.innerHTML = `<p>${response.description}</p>`;
+        				element.append(popUp);
+        				setTimeout(function (){
+        					popUp.className = "pop-up";
+        					setTimeout(()=>popUp.remove(),500);}
+        					,1500);
+        		};
+    </script>
+}

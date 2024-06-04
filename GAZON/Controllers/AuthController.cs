@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using GAZON.Database.Models;
 using GAZON.Models;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 
@@ -58,11 +59,47 @@ namespace MarketPlace.Controllers
                 return BadRequest(new { success = false, description = e.ToString()});
             }
         }
-
-        /*public async Task<IActionResult> Register()
+        public async Task<IActionResult> Register()
         {
             return View();
-        }*/
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(User user)
+        {
+            try
+            {
+                if (_context.Users.Select(u => u.Login).Contains(user.Login))
+                    return BadRequest(new
+                    {
+                        success = false,
+                        description = "This login is taken"
+                    });
+                if (user.Login == null || user.Password == null)
+                    return BadRequest(new
+                    {
+                        success = false,
+                        description = "Enter the login or password"
+                    });
+                var newUser = new User
+                {
+                    Email = user.Email,
+                    Login = user.Login,
+                    Password = HashService.HashPassword(user.Password),
+                    Name = user.Name,
+                    Role = 2
+                };
+
+                _context.Users.Add(newUser);
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return Ok(new { success = false, description = e.ToString() });
+            }
+            return Ok(new { success = true, description = user.Login });
+        }
         public async Task<IActionResult> LogOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
