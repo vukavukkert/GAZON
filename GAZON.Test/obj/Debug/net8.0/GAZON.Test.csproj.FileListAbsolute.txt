@@ -492,3 +492,8 @@ E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\obj\Debug\net8.0\ref
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\obj\Debug\net8.0\GAZON.Test.pdb
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\obj\Debug\net8.0\GAZON.Test.genruntimeconfig.cache
 E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\obj\Debug\net8.0\ref\GAZON.Test.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\bin\Debug\net8.0\MvcTestingAppManifest.json
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Testing.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\bin\Debug\net8.0\Microsoft.AspNetCore.TestHost.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\bin\Debug\net8.0\Moq.dll
+E:\Vukkert\Programming\csharp\ASPNET\GAZON\GAZON\GAZON.Test\obj\Debug\net8.0\MvcTestingAppManifest.json

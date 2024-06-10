@@ -277,7 +277,21 @@ namespace GAZON.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteReviewAttachment(int? id)
         {
-            return Ok();
+            try
+            {
+                if (id == null) throw new Exception("Attachment id is null");
+                var attachment = _context.ReviewAttachments.FirstOrDefault(r => r.Id == id);
+                if (attachment == null) throw new Exception("Attachment does not exist");
+
+                _context.ReviewAttachments.Remove(attachment);
+                
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { success = false, description = "Error message: " + e.Message });
+            }
+            return Ok(new { success = false, description = "Successfully deleted reply attachment"});
 		}
         [HttpPost]
         [Authorize]

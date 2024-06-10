@@ -95,11 +95,11 @@
                                             {
                                                 @if (attachment.Image == null)
                                                 {
-                                                    <img class="review-attachment" src="/src/images/UI/png/placeholder.png" alt="">
+                                                    <img id="@attachment.Id" class="review-attachment delete-attachment" src="/src/images/UI/png/placeholder.png" alt="">
                                                 }
                                                 else
                                                 {
-                                                    <img class="review-attachment" src="@attachment.Image" alt="">
+                                                    <img id="@attachment.Id" class="review-attachment delete-attachment" src="@attachment.Image" alt="">
                                                 }
                                             }
                                         <form id="editCommentForm" enctype="multipart/form-data" action="">
@@ -129,6 +129,23 @@
 @section Scripts {
     <script>
         $().ready(function (){
+            $('.delete-attachment').on('click', function (e){
+                var id = e.target.id;
+                console.log(id);
+                $.ajax({
+                    type: 'DELETE',
+                    url: "@Url.Action("DeleteReviewAttachment", "Home")",
+                    data: {id: id},
+                    dataType: 'json',
+                    success: function (response) {
+                        PopUpFunction(response);
+                        e.target.remove();
+                    },
+                    error: function (response) {
+                        PopUpFunction(response);
+                    }
+                })
+            });
             $('#deleteReviewButton').click(function (e) {
                                 e.preventDefault();
                                 var reviewId = this.parentElement.querySelector('#reviewId').innerHTML;
@@ -202,6 +219,17 @@
             });
             $('.button-attachment').click(function (e){
                 e.target.parentElement.querySelector("#images").click();
+            })
+            $('#images').change(function (e){
+                for (var i = 0; i < e.target.files.length; i++){
+                          var file = e.target.files[i];
+                          var img = document.createElement("img");
+                         var reader = new FileReader();
+                         reader.onloadend = function() {
+                         e.target.parentElement.querySelector('#editCommentForm').attr("src", `${reader.result}`);
+                         }
+                         reader.readAsDataURL(file);
+                         }
             })
         });
         var PopUpFunction = function (response){

@@ -1,4 +1,6 @@
 using GAZON.Database;
+using GAZON.Models;
+using GAZON.Models.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddScoped<IHashService, HashService>();
 var connectionString = builder.Configuration.GetConnectionString("MSSQL");
 builder.Services.AddDbContext<GazonContext>(options =>
 {
