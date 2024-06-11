@@ -20,23 +20,24 @@ using Xunit;
 
 	namespace GAZON.Tests.Controllers
 	{
-		public class AuthControllerTests
+	public class AuthControllerTests
+	{
+		[Fact]
+		public async Task Register_ReturnsOkayResult_WhenModelStateIsValid()
 		{
-			[Fact]
-			public async Task Register_ReturnsViewResult_WhenModelStateIsValid()
-			{
-				// Arrange
-				var contextMock = new Mock<GazonContext>();
-				var hashServiceMock = new Mock<IHashService>();
-				var controller = new AuthController(contextMock.Object, hashServiceMock.Object);
-				var model = new User { Login = "testuser", Password = "testpassword" };
+			// Arrange
+			var contextMock = new Mock<GazonContext>();
+			var hashServiceMock = new Mock<IHashService>();
+			var controller = new AuthController(contextMock.Object, hashServiceMock.Object);
+			var model = new User { Login = "testuser", Password = "testpassword" };
 
-				// Act
-				var result = await controller.Register(model);
+			// Act
+			var result = await controller.Register(model);
 
-				// Assert
-				var viewResult = Assert.IsType<OkObjectResult>(result);
-			}
+			// Assert
+			var OkayResult = Assert.IsType<OkObjectResult>(result);
 		}
+	}
+	
 	}
 

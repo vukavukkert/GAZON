@@ -36,7 +36,7 @@ public class HomeControllerTests
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, "test_user")
-        };
+		};
         var identity = new ClaimsIdentity(claims, "TestAuthType");
         return new ClaimsPrincipal(identity);
     }
@@ -83,4 +83,29 @@ public class HomeControllerTests
         Assert.Equal("Index", viewResult.ViewName);
         Assert.IsAssignableFrom<List<ItemViewModel>>(viewResult.Model);
     }
+
+	public async Task Create_Returns_Item()
+	{
+		// Arrange
+		var context = GetMockedContext();
+		var controller = new HomeController(context.Object)
+		{
+			ControllerContext = new ControllerContext
+			{
+				HttpContext = new DefaultHttpContext { User = GetMockedUser() }
+			}
+		};
+        Item item = new Item {
+            Amount = 1,
+            Description = "Desc",
+            Name = "Name",
+            Price = 100,
+            Vendor = 2,
+            };
+		// Act
+		var result = await controller.Create(null, item);
+
+        // Assert
+        Assert.NotNull(context.Object.Items.FirstOrDefaultAsync(i => i == item));
+	}
 }
